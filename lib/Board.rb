@@ -2,10 +2,19 @@
 
 class Board
   def initialize
-    @board = Array.new(3, Array.new(3, '#'))
+    @board = [['#', '#', '#'], ['#', '#', '#'], ['#', '#', '#']]
   end
 
   def load
     @board.map { |row| row.join(' ') }.join("\n")
+  end
+
+  def update (coords, type)
+    if @board[coords[0]][coords[1]] == '#'
+      @board[coords[0]][coords[1]] = type
+      true
+    else
+      false
+    end
   end
 end
