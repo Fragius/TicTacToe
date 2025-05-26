@@ -9,7 +9,7 @@ class Board
     @board.map { |row| row.join(' ') }.join("\n")
   end
 
-  def update (coords, type)
+  def update(coords, type)
     if @board[coords[0]][coords[1]] == '#'
       @board[coords[0]][coords[1]] = type
       true
