@@ -9,8 +9,8 @@ class Player
   end
 
   def play(board)
-    while true do
-      coords = gets.chomp.reverse.split("-").map { |coord| coord.to_i - 1}
+    loop do
+      coords = gets.chomp.reverse.split('-').map { |coord| coord.to_i - 1 }
       played = board.update(coords, @type)
       break if played
     end
