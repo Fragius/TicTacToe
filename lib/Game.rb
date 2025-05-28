@@ -10,10 +10,18 @@ class Game
     puts @board.load
   end
 
+  def search_winner
+    winner = @players[['X', 'O', nil].index(@board.check)]&.name
+    winner if winner
+  end
+
   def round
-    @players[0].play(@board)
-    puts @board.load
-    @players[1].play(@board)
-    puts @board.load
+    @players.each do |player|
+      player.play(@board)
+      puts @board.load
+      winner = search_winner
+      return winner if winner
+    end
+    nil
   end
 end
