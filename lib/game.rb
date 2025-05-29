@@ -12,7 +12,11 @@ class Game
 
   def search_winner
     winner = @players[['X', 'O', nil].index(@board.check)]&.name
-    winner if winner
+    if winner
+      return winner
+    elsif @board.full?
+      "It's a tie"
+    end
   end
 
   def round
