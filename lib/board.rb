@@ -19,6 +19,10 @@ class Board
     end
   end
 
+  def full?
+    !@board.flatten.include?('#')
+  end
+
   def check
     @check_guide.each do |test|
       board = @board.flatten
