@@ -20,7 +20,7 @@ class Board
   end
 
   def check
-    @@check_guide.each do |test|
+    @check_guide.each do |test|
       board = @board.flatten
       if board[test[0]] == board[test[1]] && board[test[0]] == board[test[2]] && board[test[0]] != '#'
         return board[test[0]]
